@@ -19,7 +19,7 @@ function App() {
 		<Router>
 			<Routes>
 				<Route path='/' element={<WelcomePage />} />
-				<Route path='/about' element={<FilmsPage />} />
+				<Route path='/films' element={<FilmsPage />} />
 			</Routes>
 		</Router>
 	)
