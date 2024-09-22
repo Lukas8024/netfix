@@ -9,14 +9,14 @@ export const DUMMY_FILMS = [
 	{
 		id: 'p1',
 		image: rambo1,
-		title: 'Ranbo: First Blood',
+		title: 'Rambo: First Blood',
 		description:
 			'John Rambo, a former commando and Vietnam War veteran, exposes himself to the police officers of a town.',
 	},
 	{
 		id: 'p2',
 		image: rambo2,
-		title: 'Ranbo II',
+		title: 'Rambo II',
 		description:
 			'In exchange for his release from prison, John Rambo agrees to find American prisoners of war held in Vietnam.',
 	},
@@ -39,13 +39,13 @@ export const DUMMY_FILMS = [
 		image: drunkPirates,
 		title: 'Drunk Pirates',
 		description:
-			'Blacksmith Will S. allies with Captain Jack S. to win back his love - the governor&apos;s kidnapped daughter.',
+			'Blacksmith Will S. allies with Captain Jack S. to win back his love - the governor`s kidnapped daughter.',
 	},
 	{
 		id: 'p6',
 		image: weirdThinks,
 		title: 'Weird Things',
 		description:
-			'The boy&apos;s disappearance is the beginning of strange and dangerous events plaguing the provincial town.',
+			'The boy`s disappearance is the beginning of strange and dangerous events plaguing the provincial town.',
 	},
 ]

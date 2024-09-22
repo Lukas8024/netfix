@@ -1,8 +1,14 @@
 import { DUMMY_FILMS } from '../dummy-video.ts'
 import Film from './Film'
+import MainNavigation from './MainNavigation.tsx'
 
 export default function Films() {
 	return (
+		<>
+		<header>
+			<MainNavigation />
+		</header>
+		
 		<section id='films'>
 			<h2>List of Films</h2>
 			<ul className='films'>
@@ -13,5 +19,6 @@ export default function Films() {
 				))}
 			</ul>
 		</section>
+				</>
 	)
 }
