@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react'
 
-const Film: React.FC<{title: string; description: string; image: string}> = ({ title, description, image }) => {
+const Film: React.FC<{ title: string; description: string; image: string }> = ({ title, image }) => {
 	return (
 		<article className='film'>
 			<img src={image} alt={title} />
-			<div className="film-content">
+			<div className='film-content'>
 				<h3>{title}</h3>
-				<p>{description}</p>
+				{/* <p>{description}</p> */}
 			</div>
 		</article>
 	)
