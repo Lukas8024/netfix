@@ -5,44 +5,51 @@ import fastFurious from './assets/syrena105.jpg'
 import drunkPirates from './assets/drunk_pirates.jpg'
 import weirdThinks from './assets/weird_things.jpg'
 
-export const DUMMY_FILMS = [
+type MyObject = {
+	id: number
+	image: string
+	title: string
+	description: string
+}
+
+export const DUMMY_FILMS: MyObject[] = [
 	{
-		id: 'p1',
+		id: 1,
 		image: rambo1,
 		title: 'Rambo: First Blood',
 		description:
 			'John Rambo, a former commando and Vietnam War veteran, exposes himself to the police officers of a town.',
 	},
 	{
-		id: 'p2',
+		id: 2,
 		image: rambo2,
 		title: 'Rambo II',
 		description:
 			'In exchange for his release from prison, John Rambo agrees to find American prisoners of war held in Vietnam.',
 	},
 	{
-		id: 'p3',
+		id: 3,
 		image: fastFurious,
 		title: 'The Fast and the Furious',
 		description:
 			'A policeman infiltrates a group organising illegal car races. The situation becomes complicated when he gets to know the sister of the leader of the criminals better.',
 	},
 	{
-		id: 'p4',
+		id: 4,
 		image: saberWars,
 		title: 'Saber Wars',
 		description:
 			'A war very far away between galactics.It gets really emotional and intense with every minute passing by.',
 	},
 	{
-		id: 'p5',
+		id: 5,
 		image: drunkPirates,
 		title: 'Drunk Pirates',
 		description:
 			'Blacksmith Will S. allies with Captain Jack S. to win back his love - the governor`s kidnapped daughter.',
 	},
 	{
-		id: 'p6',
+		id: 6,
 		image: weirdThinks,
 		title: 'Weird Things',
 		description:
