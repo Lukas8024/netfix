@@ -26,6 +26,10 @@ html {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+li{
+	list-style: none;
+}
+
 #main-header {
 	display: flex;
 	flex-direction: column;
@@ -79,7 +83,7 @@ html {
 .header-content h3 {
 	padding: 1rem;
 	text-align: center;
-	font-size: 4.2rem;
+	font-size: 2.5rem;
 }
 
 .header-content-link {
@@ -94,6 +98,8 @@ html {
 	font-weight: bold;
 	text-transform: uppercase;
 }
+
+/* Component Films */
 
 #films {
 	display: flex;
@@ -117,6 +123,8 @@ html {
 	grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
 	gap: 3rem;
 }
+
+/* Component Film */
 
 .film {
 	height: 100%;
@@ -146,19 +154,21 @@ html {
 }
 
 /* Navigation */
+
 .nav {
 	margin: auto;
 	max-width: 1200px;
 	border-radius: 30px;
-	padding: 2rem 5rem;
+	padding: 1rem 3.5rem;
 	display: flex;
 	justify-content: space-between;
 	background-color: rgb(24 24 45);
 }
 
 .nav img {
-	width: 4rem;
+	width: 5rem;
 	height: auto;
+	border-radius: 6px;
 }
 
 .hamburger {
@@ -173,7 +183,6 @@ html {
 	display: none;
 	align-items: center;
 	gap: 1rem;
-	list-style: none;
 }
 
 .list.active {
@@ -189,16 +198,60 @@ html {
 	padding: 5rem;
 }
 
+.list.active a{
+	text-transform: uppercase;
+	font-size: 3.6rem;
+}
+
 .list a {
 	padding: 2rem;
 	text-decoration: none;
 	font-size: 2.6rem;
 	color: #6f5aad;
+	text-transform: uppercase;
 }
+
+/* Component Top5 */
+
+#topfilms{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#topfilms h2 {
+	padding: 3rem;
+	color: #6f5aad;
+	text-align: center;
+	font-size: 3rem;
+}
+
+.topfilms{
+	margin: 2rem;
+	border-radius: 6px;
+	height: 200px;
+}
+
+.items {
+	object-fit: cover;
+	background-position: center;
+	background-size: cover;
+}
+
+.topfilms img {
+	width: 300px;
+	border-radius: 6px;
+}
+
+/* Media queres */
 
 @media (min-width: 576px) {
 	.header-content h1 {
 		font-size: 8rem;
+	}
+
+	.header-content h3 {
+		font-size: 3.2rem;
 	}
 
 	.header-content Link {
@@ -219,6 +272,10 @@ html {
 @media (min-width: 992px) {
 	.header-content h1 {
 		font-size: 12rem;
+	}
+
+	.header-content h3 {
+		font-size: 4rem;
 	}
 
 	.header-content Link {
