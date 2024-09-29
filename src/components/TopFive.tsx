@@ -5,7 +5,6 @@ import { DUMMY_FILMS } from '../dummy-video'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
 
-
 const TopFive = () => {
 	const [selectedFilms, setSelectedFilms] =
 		useState<{ id: number; image: string; title: string; description: string }[]>(DUMMY_FILMS)
@@ -43,13 +42,13 @@ const TopFive = () => {
 				autoPlay
 				autoPlaySpeed={2000}
 				centerMode={false}
-				className="topfilms"
-				containerClass="container-with-dots"
-				dotListClass=""
+				className='topfilms'
+				containerClass='container-with-dots'
+				dotListClass=''
 				draggable
 				focusOnSelect={false}
 				infinite
-				itemClass="items"
+				itemClass='topfilms-items'
 				keyBoardControl
 				minimumTouchDrag={80}
 				pauseOnHover
@@ -57,53 +56,53 @@ const TopFive = () => {
 				renderButtonGroupOutside={false}
 				renderDotsOutside={false}
 				responsive={{
-				  desktop: {
-					breakpoint: {
-					  max: 3000,
-					  min: 1024
+					desktop: {
+						breakpoint: {
+							max: 3000,
+							min: 1024,
+						},
+						items: 3,
+						partialVisibilityGutter: 40,
 					},
-					items: 3,
-					partialVisibilityGutter: 40
-				  },
-				  mobile: {
-					breakpoint: {
-					  max: 464,
-					  min: 0
+					mobile: {
+						breakpoint: {
+							max: 464,
+							min: 0,
+						},
+						items: 1,
+						partialVisibilityGutter: 30,
 					},
-					items: 1,
-					partialVisibilityGutter: 30
-				  },
-				  tablet: {
-					breakpoint: {
-					  max: 1024,
-					  min: 464
+					tablet: {
+						breakpoint: {
+							max: 1024,
+							min: 464,
+						},
+						items: 2,
+						partialVisibilityGutter: 30,
 					},
-					items: 2,
-					partialVisibilityGutter: 30
-				  }
 				}}
 				rewind={false}
 				rewindWithAnimation={false}
 				rtl={false}
 				shouldResetAutoplay
 				showDots={false}
-				sliderClass=""
-				slidesToSlide={2}
+				sliderClass=''
+				slidesToSlide={1}
 				swipeable
 			>
-				<div>
+				<div className='topfilms-item' data-text='1'>
 					<img src={selectedFilms[0].image} />
 				</div>
-				<div>
+				<div className='topfilms-item' data-text='2'>
 					<img src={selectedFilms[1].image} />
 				</div>
-				<div>
+				<div className='topfilms-item' data-text='3'>
 					<img src={selectedFilms[2].image} />
 				</div>
-				<div>
+				<div className='topfilms-item' data-text='4'>
 					<img src={selectedFilms[3].image} />
 				</div>
-				<div>
+				<div className='topfilms-item' data-text='5'>
 					<img src={selectedFilms[4].image} />
 				</div>
 			</Carousel>

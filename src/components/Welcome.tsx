@@ -1,32 +1,4 @@
 import { Link } from 'react-router-dom'
-// import libraryFilms from '../assets/library_films.jpg'
-import TopFive from './TopFive'
-
-// import Carousel from 'react-multi-carousel'
-// import 'react-multi-carousel/lib/styles.css'
-
-// // import rambo from '../assets/rambo_1.jpg'
-// // import rambo2 from '../assets/rambo_2.jpg'
-
-// const responsive = {
-// 	superLargeDesktop: {
-// 		// the naming can be any, depends on you.
-// 		breakpoint: { max: 4000, min: 3000 },
-// 		items: 5,
-// 	},
-// 	desktop: {
-// 		breakpoint: { max: 3000, min: 1024 },
-// 		items: 3,
-// 	},
-// 	tablet: {
-// 		breakpoint: { max: 1024, min: 464 },
-// 		items: 2,
-// 	},
-// 	mobile: {
-// 		breakpoint: { max: 464, min: 0 },
-// 		items: 1,
-// 	},
-// }
 
 export default function Welcome() {
 	return (
@@ -44,11 +16,6 @@ export default function Welcome() {
 					</Link>
 				</div>
 			</header>
-			<main>
-				<section>
-					<TopFive />
-				</section>
-			</main>
 		</>
 	)
 }
