@@ -28,8 +28,7 @@ export default function WelcomePage() {
 								<article>
 									<p>This page was written to practice what I learned about React + TypeScript.</p>
 									<p>
-										I use React Router in the project, but in order to keep the page static instead of “create browser”
-										I used “HashRouter” among other things so that I could host it in “GitHub Pages”.
+										I use React Router in the project, but in order to keep the page static instead of “createBrowserRouter”. I used “HashRouter” among other things so that I could host it in “GitHub Pages”.
 									</p>
 								</article>
 							</Accordion.Content>

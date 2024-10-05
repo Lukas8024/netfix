@@ -1,32 +1,44 @@
+import { useState } from 'react'
+
 import { DUMMY_FILMS } from '../dummy-video.ts'
 import Film from './Film'
-import MainNavigation from './MainNavigation.tsx'
+import Modal from './Modal.tsx'
 
 export default function Films() {
-	// const allFilms = DUMMY_FILMS.map(film => (
-	// 	<li key={film.id}>
-	// 		<Film {...film} />
-	// 	</li>
-	// ))
+	const [filmId, setFilmId] = useState({})
+	const [isModalOpen, setIsModalOpen] = useState(false)
 
-	// console.log(allFilms)
+	const openModal = (film: {}) => {
+		console.log(filmId)
+
+		setFilmId(film)
+		setIsModalOpen(true)
+	}
+
+	const closeModal = () => {
+		setFilmId({})
+		setIsModalOpen(false)
+	}
 
 	return (
 		<>
-			<header>
-				<MainNavigation />
-			</header>
-
 			<section id='films'>
 				<h2>List of Films</h2>
 				<ul className='films'>
 					{DUMMY_FILMS.map(film => (
-						<li key={film.id}>
-							<Film {... film} />
+						<li key={film.id} onClick={() => openModal(film)}>
+							<Film {...film} />
+							{/* <button onClick={() => openModal(film)}>More...</button> */}
 						</li>
-					))}				
-					{/* {allFilms} */}
+					))}
 				</ul>
+
+				{isModalOpen ? (
+					<Modal onClose={closeModal}>
+						<Film {...filmId} />
+						<p>{filmId.description}</p>
+					</Modal>
+				) : null}
 			</section>
 		</>
 	)
