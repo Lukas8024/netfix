@@ -4,11 +4,18 @@ import { DUMMY_FILMS } from '../dummy-video.ts'
 import Film from './Film'
 import Modal from './Modal.tsx'
 
+const initialFilmId = {
+	id: 0,
+	image: '',
+	title: '',
+	description: '',
+}
+
 export default function Films() {
-	const [filmId, setFilmId] = useState({})
+	const [filmId, setFilmId] = useState(initialFilmId)
 	const [isModalOpen, setIsModalOpen] = useState(false)
 
-	const openModal = (film: {}) => {
+	const openModal = (film: any) => {
 		console.log(filmId)
 
 		setFilmId(film)
@@ -16,7 +23,7 @@ export default function Films() {
 	}
 
 	const closeModal = () => {
-		setFilmId({})
+		setFilmId(initialFilmId)
 		setIsModalOpen(false)
 	}
 

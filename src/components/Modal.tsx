@@ -1,6 +1,6 @@
 import { createPortal } from 'react-dom'
 
-export default function Modal({ children, onClose }) {
+export default function Modal({ children, onClose }: any) {
 	return createPortal(
 		<dialog className='modal'>
 			<div className='modal-content'>
