@@ -11,14 +11,13 @@ const TopFive = () => {
 
 	// Funkcja losująca pięć róznych obiektów
 	const getRandomObjects = () => {
-		const shuffled = [...DUMMY_FILMS].sort(() => 0.5 - Math.random()) // Tasowanie tablicy
-		return shuffled.slice(0, 5) // Zwracamy pięć pierwszych obiektów
+		const shuffled = [...DUMMY_FILMS].sort(() => 0.5 - Math.random())
+		return shuffled.slice(0, 5)
 	}
 
 	useEffect(() => {
-		// Ustawiamy losowe obiekty przy pierwszym renderze
 		const randomObjects = getRandomObjects()
-		// console.log(randomObjects)
+
 		setSelectedFilms(randomObjects)
 	}, [])
 
@@ -59,14 +58,14 @@ const TopFive = () => {
 					desktop: {
 						breakpoint: {
 							max: 3000,
-							min: 1024,
+							min: 1380,
 						},
 						items: 3,
 						partialVisibilityGutter: 40,
 					},
 					mobile: {
 						breakpoint: {
-							max: 464,
+							max: 895,
 							min: 0,
 						},
 						items: 1,
@@ -74,8 +73,8 @@ const TopFive = () => {
 					},
 					tablet: {
 						breakpoint: {
-							max: 1024,
-							min: 464,
+							max: 1380,
+							min: 895,
 						},
 						items: 2,
 						partialVisibilityGutter: 30,
