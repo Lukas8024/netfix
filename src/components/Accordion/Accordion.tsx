@@ -14,8 +14,6 @@ const AccordionContext = createContext<AccordionContextType | undefined>(undefin
 export function useAccordionContext() {
 	const ctx = useContext(AccordionContext)
 
-// console.log(ctx);
-
 	if (!ctx) {
 		throw new Error('Accordion related component must be wrraped by <Accordion>')
 	}
