@@ -9,7 +9,6 @@ const AccordionItemContext = createContext<AccordionItemContextType | undefined>
 export function useAccordionItemContext() {
 	const ctx = useContext(AccordionItemContext)
 
-	console.log(ctx);
 	if (!ctx) {
 		throw new Error('AccordionItem - related components must be wrrap by <Accordion.Item>')
 	}

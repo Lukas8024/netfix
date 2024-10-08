@@ -1,6 +1,7 @@
 import Welcome from '../components/Welcome'
 import TopFive from '../components/TopFive'
 import Accordion from '../components/Accordion/Accordion'
+import Footer from '../components/Footer'
 
 export default function WelcomePage() {
 	return (
@@ -57,6 +58,7 @@ export default function WelcomePage() {
 					</Accordion>
 				</section>
 			</main>
+			<Footer/>
 		</>
 	)
 }

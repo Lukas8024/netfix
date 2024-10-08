@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import logo from '../assets/logoN.svg'
@@ -7,8 +7,23 @@ import burgerIcon from '../assets/burgerIcon.svg'
 export default function MainNavigation() {
 	const [isOpen, setIsOpen] = useState(false)
 
+	useEffect(() => {
+		if (isOpen) {
+			document.body.style.overflow = 'hidden'
+		} else {
+			document.body.style.overflow = ''
+		}
+		return () => {
+			document.body.style.overflow = ''
+		}
+	}, [isOpen])
+
 	function toggleNavigation() {
         setIsOpen(!isOpen)
+	}
+
+	function handleCloseModal(){
+		setIsOpen(false)
 	}
 
 	return (
@@ -21,10 +36,10 @@ export default function MainNavigation() {
 			</button>
 			<ul className={`list ${isOpen ? 'active' : ''}`}>
 				<li>
-					<NavLink to='/'>Start</NavLink>
+					<NavLink to='/' onClick={handleCloseModal}>Start</NavLink>
 				</li>
 				<li>
-					<NavLink to='/films'>Films</NavLink>
+					<NavLink to='/films' onClick={handleCloseModal}>Films</NavLink>
 				</li>
 			</ul>
 		</nav>

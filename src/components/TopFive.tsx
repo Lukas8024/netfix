@@ -9,7 +9,6 @@ const TopFive = () => {
 	const [selectedFilms, setSelectedFilms] =
 		useState<{ id: number; image: string; title: string; description: string }[]>(DUMMY_FILMS)
 
-	// Funkcja losująca pięć róznych obiektów
 	const getRandomObjects = () => {
 		const shuffled = [...DUMMY_FILMS].sort(() => 0.5 - Math.random())
 		return shuffled.slice(0, 5)
