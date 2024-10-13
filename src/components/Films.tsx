@@ -31,6 +31,7 @@ export default function Films() {
 		<>
 			<section id='films'>
 				<h2>List of Films</h2>
+				<p>A library of movies and series in your home and beyond.</p>
 				<ul className='films'>
 					{DUMMY_FILMS.map(film => (
 						<li key={film.id} onClick={() => openModal(film)}>

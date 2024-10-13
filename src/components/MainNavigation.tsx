@@ -19,10 +19,10 @@ export default function MainNavigation() {
 	}, [isOpen])
 
 	function toggleNavigation() {
-        setIsOpen(!isOpen)
+		setIsOpen(!isOpen)
 	}
 
-	function handleCloseModal(){
+	function handleCloseModal() {
 		setIsOpen(false)
 	}
 
@@ -36,10 +36,24 @@ export default function MainNavigation() {
 			</button>
 			<ul className={`list ${isOpen ? 'active' : ''}`}>
 				<li>
-					<NavLink to='/' onClick={handleCloseModal}>Start</NavLink>
+					<NavLink to='/' onClick={handleCloseModal}>
+						Start
+					</NavLink>
 				</li>
 				<li>
-					<NavLink to='/films' onClick={handleCloseModal}>Films</NavLink>
+					<NavLink to='/films' onClick={handleCloseModal}>
+						Films
+					</NavLink>
+				</li>
+				<li>
+					<NavLink to='/films/favorites' onClick={handleCloseModal}>
+						My Favorites
+					</NavLink>
+				</li>
+				<li>
+					<NavLink to='/films/about' onClick={handleCloseModal}>
+						About
+					</NavLink>
 				</li>
 			</ul>
 		</nav>
