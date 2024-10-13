@@ -4,7 +4,7 @@ export default function Footer() {
 	return (
 		<div className='footer'>
 			<p>
-				&copy; <span className='footer-year'>{year}</span> by lukas_80
+				&copy; <span className='footer-year'>{year}</span> by lukas_8024
 			</p>
 		</div>
 	)

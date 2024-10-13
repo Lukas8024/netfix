@@ -119,6 +119,13 @@ button{
 	font-size: 3rem;
 }
 
+#films p {
+	padding: 2rem 0.8rem;
+	margin-bottom: 1rem;
+	text-align: center;
+	font-size: 2rem;
+}
+
 .films {
 	margin: auto;
 	max-width: 140rem;
@@ -165,17 +172,22 @@ button{
 /* Navigation */
 
 .nav {
+	position: sticky;
+	top: 0.5rem;
 	margin: auto;
 	max-width: 1200px;
 	border-radius: 30px;
 	padding: 1rem 3.5rem;
 	display: flex;
 	justify-content: space-between;
-	background-color: rgb(24 24 45);
+	background-color: rgba(24, 24, 45, 0.8);
+	border: 0.15rem solid #6f5aad;
+	z-index: 2000;
 }
 
+
 .nav img {
-	width: 4.5rem;
+	width: 3.5rem;
 	height: auto;
 	border-radius: 6px;
 }
@@ -185,7 +197,7 @@ button{
 	fill: #6f5aad;
 	border: none;
 	cursor: pointer;
-	z-index: 100;
+	z-index: 10;
 }
 
 .list {
@@ -195,16 +207,19 @@ button{
 }
 
 .list.active {
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	top: -0.6rem;
+	left: 0;
+	width: 100%;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	position: absolute;
-	top: 0;
-	right: 0;
 	background-color: #333;
-	width: 100%;
-	height: 100%;
 	padding: 5rem;
+	/* z-index: 5; */
 }
 
 .list.active a {
@@ -226,6 +241,7 @@ button{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	/* z-index: 2; */
 }
 
 #topfilms h2 {
@@ -233,6 +249,13 @@ button{
 	/* color: #6f5aad; */
 	text-align: center;
 	font-size: 3.6rem;
+}
+
+#topfilms p{
+	padding: 2rem 0.8rem;
+	margin-bottom: 1rem;
+	text-align: center;
+	font-size: 2rem;
 }
 
 .topfilms {
@@ -350,7 +373,7 @@ button{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	z-index: 101;
+	z-index: 3000;
 }
 
 .modal-content {
