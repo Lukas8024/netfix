@@ -6,7 +6,7 @@ export default function AccordionTitle({ children, className }: any) {
 	const id = useAccordionItemContext()
 
 	return (
-		<h3 className={className} onClick={() => toggleItem(id)}> 
+		<h3 className={className} onClick={() => toggleItem(id)}>
 			{children}
 		</h3>
 	)

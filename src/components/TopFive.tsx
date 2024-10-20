@@ -5,34 +5,30 @@ import { DUMMY_FILMS } from '../dummy-video'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
 
-
 const TopFive = () => {
 	const [selectedFilms, setSelectedFilms] =
-	useState<{ id: number; image: string; title: string; description: string }[]>(DUMMY_FILMS)
-	
-	
+		useState<{ id: number; image: string; title: string; description: string }[]>(DUMMY_FILMS)
+
 	useEffect(() => {
 		const getRandomObjects = () => {
 			const shuffled = [...DUMMY_FILMS].sort(() => 0.5 - Math.random())
 			return shuffled.slice(0, 5)
 		}
-		
+
 		const randomObjects = getRandomObjects()
-		
+
 		if (localStorage.getItem('randomObjectsStorage')) {
-			console.log("Obiekt istnieje w localStorage.");
+			console.log('Obiekt istnieje w localStorage.')
 			const initialDummyFilms = JSON.parse(localStorage.getItem('randomObjectsStorage')!)
 			// console.log(initialDummyFilms);
 			setSelectedFilms(initialDummyFilms)
-		
 		} else {
-			console.log("Obiekt nie istnieje w localStorage.");
+			console.log('Obiekt nie istnieje w localStorage.')
 			localStorage.setItem('randomObjectsStorage', JSON.stringify(randomObjects))
 			setSelectedFilms(randomObjects)
 		}
-	
 	}, [])
-	
+
 	return (
 		<>
 			<div id='topfilms'>

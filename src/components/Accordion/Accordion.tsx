@@ -41,5 +41,5 @@ export default function Accordion({ children, className }: any) {
 }
 
 Accordion.Item = AccordionItem
-Accordion.Title= AccordionTitle
+Accordion.Title = AccordionTitle
 Accordion.Content = AccordionContenet

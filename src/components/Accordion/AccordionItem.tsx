@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react'
 
-interface AccordionItemContextType{
- id: any;
+interface AccordionItemContextType {
+	id: any
 }
 
 const AccordionItemContext = createContext<AccordionItemContextType | undefined>(undefined)
