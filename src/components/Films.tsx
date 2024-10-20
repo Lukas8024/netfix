@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { DUMMY_FILMS } from '../dummy-video.ts'
 import Film from './Film'
 import Modal from './Modal.tsx'
+import MyFavorites from './MyFavorites.tsx'
 
 const initialSelectedFilm = {
 	id: 0,
@@ -11,14 +12,34 @@ const initialSelectedFilm = {
 	description: '',
 }
 
+type Film = {
+	id: number
+	image: string
+	title: string
+	description: string
+}
+
 export default function Films() {
+	const [favoriteFilms, setFavoriteFilms] = useState<Film[]>([])
 	const [selectedFilm, setSelectedFilm] = useState(initialSelectedFilm)
 	const [isModalOpen, setIsModalOpen] = useState(false)
 
-	const openModal = (film: any) => {
-		console.log(selectedFilm)
+	let newFilm = selectedFilm
 
-		setSelectedFilm(film)
+	function addFavoritesHandler() {
+		if (favoriteFilms.some(favFilm => favFilm.id === newFilm.id)) {
+			console.log('Istnieje w fav')
+		} else {
+			console.log('Nie istnieje w fav')
+			setFavoriteFilms(prevfavoritefilms => [newFilm, ...prevfavoritefilms])
+			console.log(favoriteFilms)
+		}
+	}
+
+	const openModal = (filmId: any) => {
+		// console.log(selectedFilm)
+
+		setSelectedFilm(filmId)
 		setIsModalOpen(true)
 	}
 
@@ -42,12 +63,15 @@ export default function Films() {
 				</ul>
 
 				{isModalOpen ? (
-					<Modal onClose={closeModal} isOpen={isModalOpen}>
+					<Modal onClose={closeModal} isOpen={isModalOpen} addFavorites={addFavoritesHandler}>
 						<Film {...selectedFilm} />
 						<p>{selectedFilm.description}</p>
 					</Modal>
 				) : null}
 			</section>
+
+			<MyFavorites favoriteFilms={favoriteFilms} />
+
 		</>
 	)
 }

@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { createPortal } from 'react-dom'
 
-export default function Modal({ children, onClose, isOpen }: any) {
+export default function Modal({ children, onClose, isOpen, addFavorites }: any) {
 	useEffect(() => {
 		if (isOpen) {
 			document.body.style.overflow = 'hidden'
@@ -22,6 +22,7 @@ export default function Modal({ children, onClose, isOpen }: any) {
 			<dialog className='modal'>
 				<div className='modal-content'>
 					{children}
+					<button onClick={addFavorites}>Add Favorites</button>
 					<button onClick={onClose}>Close</button>
 				</div>
 			</dialog>

@@ -5,8 +5,8 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import FilmsPage from './pages/FilmsPage'
 import WelcomePage from './pages/WelcomePage'
 import FilmsRoot from './pages/FilmsRoot'
-import MyFavorites from './pages/MyFavorites'
-import About from './pages/About'
+import MyFavorites from './pages/MyFavoritesPage'
+import About from './pages/AboutPage'
  
 // const router = createBrowserRouter([
 //   {path: '/', element: <WelcomePage />},
