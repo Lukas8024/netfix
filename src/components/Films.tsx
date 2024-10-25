@@ -12,38 +12,18 @@ const initialSelectedFilm = {
 	description: '',
 }
 
-type Film = {
-	id: number
-	image: string
-	title: string
-	description: string
-}
-
 export default function Films() {
-	const [favoriteFilms, setFavoriteFilms] = useState<Film[]>([])
 	const [selectedFilm, setSelectedFilm] = useState(initialSelectedFilm)
 	const [isModalOpen, setIsModalOpen] = useState(false)
 
-	let newFilm = selectedFilm
-
-	function addFavoritesHandler() {
-		if (favoriteFilms.some(favFilm => favFilm.id === newFilm.id)) {
-			console.log('Istnieje w fav')
-		} else {
-			console.log('Nie istnieje w fav')
-			setFavoriteFilms(prevfavoritefilms => [newFilm, ...prevfavoritefilms])
-			console.log(favoriteFilms)
-		}
-	}
-
 	const openModal = (filmId: any) => {
-		// console.log(selectedFilm)
 
 		setSelectedFilm(filmId)
 		setIsModalOpen(true)
 	}
 
 	const closeModal = () => {
+		
 		setSelectedFilm(initialSelectedFilm)
 		setIsModalOpen(false)
 	}
@@ -57,21 +37,19 @@ export default function Films() {
 					{DUMMY_FILMS.map(film => (
 						<li key={film.id} onClick={() => openModal(film)}>
 							<Film {...film} />
-							{/* <button onClick={() => openModal(film)}>More...</button> */}
 						</li>
 					))}
 				</ul>
 
 				{isModalOpen ? (
-					<Modal onClose={closeModal} isOpen={isModalOpen} addFavorites={addFavoritesHandler}>
+					<Modal onClose={closeModal} isOpen={isModalOpen} id={selectedFilm}>
 						<Film {...selectedFilm} />
 						<p>{selectedFilm.description}</p>
 					</Modal>
 				) : null}
 			</section>
 
-			<MyFavorites favoriteFilms={favoriteFilms} />
-
+			<MyFavorites />
 		</>
 	)
 }

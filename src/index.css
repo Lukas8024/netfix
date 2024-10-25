@@ -26,6 +26,12 @@ html {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+h2 {
+	text-align: center;
+	color: #6f5aad;
+	font-size: 3.4rem;
+}
+
 li {
 	list-style: none;
 }
@@ -99,8 +105,36 @@ li {
 	text-transform: uppercase;
 }
 
-button{
+button {
 	cursor: pointer;
+}
+
+/* Films Root */
+
+#main-root {
+	/* width: 100%; */
+	/* height: 120vh; */
+	background: black;
+	/* background: linear-gradient(to bottom, rgb(0, 0, 0), #242424); */
+	/* background-color: red; */
+}
+
+.main-root {
+	width: 100%;
+	height: 100vh;
+	background-image: url('./assets/background.jpg');
+	object-fit: cover;
+	background-position: center;
+	background-size: cover;
+}
+
+.shadow-root {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1;
 }
 
 /* Component Films */
@@ -185,7 +219,6 @@ button{
 	z-index: 2000;
 }
 
-
 .nav img {
 	width: 3.5rem;
 	height: auto;
@@ -248,10 +281,10 @@ button{
 	padding: 3rem;
 	/* color: #6f5aad; */
 	text-align: center;
-	font-size: 3.6rem;
+	font-size: 3rem;
 }
 
-#topfilms p{
+#topfilms p {
 	padding: 2rem 0.8rem;
 	margin-bottom: 1rem;
 	text-align: center;
@@ -308,7 +341,7 @@ button{
 	padding: 3rem;
 	/* color: #6f5aad; */
 	text-align: center;
-	font-size: 3.6rem;
+	font-size: 3rem;
 }
 
 .accordion {
@@ -394,9 +427,45 @@ button{
 	border-radius: 6px;
 }
 
+/* Component MyFavorites */
+
+#myfavorites{
+	display: flex;
+	flex-direction: column;
+	/* justify-content: center; */
+	margin-bottom: 2rem;
+}
+
+#myfavorites p{
+	padding: 2rem;
+	text-align: center;
+	font-size: 2rem;
+}
+
+.myfavorites{
+	/* background-color: #6f5aad; */
+	margin: 2rem;
+}
+
+.myfavorites-items{
+	padding: 2rem;
+	margin-bottom: 6rem;
+}
+
+.myfavorites button{
+
+	align-self: flex-end;
+	/* width: 14rem; */
+	margin-top: 2rem;
+	padding: 0.8rem 2rem;
+	background-color: rgb(24 24 45);
+	font-size: 1.6rem;
+	border-radius: 6px;
+}
+
 /* Footer */
 
-.footer{
+.footer {
 	margin-top: 3rem;
 	color: #6f5aad;
 	background-color: rgb(24 24 45);

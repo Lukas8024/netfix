@@ -5,13 +5,17 @@ import Footer from '../components/Footer'
 
 function FilmsRoot() {
 	return (
-		<>
-			<MainNavigation />
-			<main>
-				<Outlet />
-			</main>
-            <Footer />
-		</>
+		<div id='main-root'>
+			<div className='main-root'>
+				<div className='shadow-root'>
+					<MainNavigation />
+					<main>
+						<Outlet />
+					</main>
+					<Footer />
+				</div>
+			</div>
+		</div>
 	)
 }
 

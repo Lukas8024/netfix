@@ -1,7 +1,10 @@
-import { useEffect } from 'react'
+import { useEffect, useContext } from 'react'
 import { createPortal } from 'react-dom'
+import FavFilmContext from '../store/films-context'
 
-export default function Modal({ children, onClose, isOpen, addFavorites }: any) {
+export default function Modal({ children, onClose, isOpen, id }: any) {
+	const { addFavorite } = useContext(FavFilmContext)
+
 	useEffect(() => {
 		if (isOpen) {
 			document.body.style.overflow = 'hidden'
@@ -22,7 +25,7 @@ export default function Modal({ children, onClose, isOpen, addFavorites }: any) 
 			<dialog className='modal'>
 				<div className='modal-content'>
 					{children}
-					<button onClick={addFavorites}>Add Favorites</button>
+					<button onClick={() => addFavorite(id)}>Add Favorites</button>
 					<button onClick={onClose}>Close</button>
 				</div>
 			</dialog>

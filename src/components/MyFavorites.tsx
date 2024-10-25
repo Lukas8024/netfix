@@ -1,4 +1,7 @@
+import { useContext } from 'react'
+
 import Film from './Film'
+import FavFilmContext from '../store/films-context'
 
 type Film = {
 	id: number
@@ -7,19 +10,20 @@ type Film = {
 	description: string
 }
 
-interface ChildComponentsProps {
-	favoriteFilms: Film[]
-}
+export default function MyFavorites() {
+	const { favoriteFilms, isFavActive, deleteFavorite } = useContext(FavFilmContext)
 
-export default function MyFavorites({ favoriteFilms }: ChildComponentsProps) {
 	return (
-		<section id='films'>
+		<section id='myfavorites'>
 			<h2>Favorites Films</h2>
-			<p>My add favorites Films.</p>
-			<ul className='films'>
+			{isFavActive ? <p>My selected film summaries.</p> : <p>Add favorites Films.</p>}
+
+			<ul className=' myfavorites'>
 				{favoriteFilms.map(favoriteFilms => (
-					<li key={favoriteFilms.id}>
+					<li className='myfavorites-items' key={favoriteFilms.id}>
 						<Film {...favoriteFilms} />
+						<p>{favoriteFilms.description}</p>
+						<button onClick={() => deleteFavorite(favoriteFilms)}>Remove Favorite</button>
 					</li>
 				))}
 			</ul>
