@@ -18,7 +18,8 @@ html {
 
 	color-scheme: light dark;
 	color: rgba(255, 255, 255, 0.87);
-	background-color: #242424;
+	/* background-color: #242424; */
+	background-color: rgb(15, 15, 15);
 
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
@@ -183,9 +184,17 @@ button {
 	cursor: pointer;
 }
 
-.film img {
+.film-image{	
+	position: relative;
 	width: 100%;
 	border-radius: 6px;
+}
+
+.star-fav{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 50;
 }
 
 .film-content {
@@ -202,6 +211,7 @@ button {
 	/* color: #6f5aad; */
 	margin-bottom: 0.25rem;
 }
+
 
 /* Navigation */
 
@@ -268,7 +278,7 @@ button {
 	text-transform: uppercase;
 }
 
-/* Component Top5 */
+/* Component Top5 five */
 
 #topfilms {
 	display: flex;
@@ -279,7 +289,6 @@ button {
 
 #topfilms h2 {
 	padding: 3rem;
-	/* color: #6f5aad; */
 	text-align: center;
 	font-size: 3rem;
 }
@@ -429,33 +438,31 @@ button {
 
 /* Component MyFavorites */
 
-#myfavorites{
+#myfavorites {
 	display: flex;
 	flex-direction: column;
-	/* justify-content: center; */
+	justify-content: space-between;
 	margin-bottom: 2rem;
 }
 
-#myfavorites p{
+#myfavorites p {
 	padding: 2rem;
 	text-align: center;
 	font-size: 2rem;
 }
 
-.myfavorites{
+.myfavorites {
 	/* background-color: #6f5aad; */
 	margin: 2rem;
 }
 
-.myfavorites-items{
+.myfavorites-items {
 	padding: 2rem;
 	margin-bottom: 6rem;
 }
 
-.myfavorites button{
-
+.myfavorites button {
 	align-self: flex-end;
-	/* width: 14rem; */
 	margin-top: 2rem;
 	padding: 0.8rem 2rem;
 	background-color: rgb(24 24 45);
@@ -491,6 +498,13 @@ button {
 
 	.modal-content {
 		width: 40rem;
+	}
+
+	.myfavorites {
+		margin: auto;
+		max-width: 50rem;
+		width: 90%;
+		list-style: none;
 	}
 }
 

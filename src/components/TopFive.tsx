@@ -5,7 +5,8 @@ import { DUMMY_FILMS } from '../dummy-video'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
 
-const TopFive = () => {
+// const TopFive = () => {
+export default function TopFive () {
 	const [selectedFilms, setSelectedFilms] =
 		useState<{ id: number; image: string; title: string; description: string }[]>(DUMMY_FILMS)
 
@@ -118,4 +119,4 @@ const TopFive = () => {
 	)
 }
 
-export default TopFive
+// export default TopFive

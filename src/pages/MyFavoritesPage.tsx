@@ -4,8 +4,8 @@ import MyFavorites from '../components/MyFavorites'
 export default function MyFavoritesPage() {
 	return (
 		<>
-			<TopFive />
 			<MyFavorites />
+			<TopFive />
 		</>
 	)
 }
