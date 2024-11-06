@@ -29,7 +29,6 @@ export default function Films() {
 	}
 
 	const closeModal = () => {
-		// setSelectedFilm(initialSelectedFilm)
 		setIsModalOpen(false)
 	}
 

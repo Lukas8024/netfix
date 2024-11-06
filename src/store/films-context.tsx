@@ -12,7 +12,7 @@ type FilmsContextObj = {
 	favoriteFilms: Film[]
 	addFavorite: (selectedFilmId: Film) => void
 	deleteFavorite: (selectedFilmId: Film) => void
-	toogleFav: (selectedFilmId: Film) => void
+	toggleFav: (selectedFilmId: Film) => void
 	isFavActive: boolean
 	isFavoriteStatus: boolean | null
 }
@@ -21,12 +21,10 @@ const FavFilmContext = createContext<FilmsContextObj>({
 	favoriteFilms: [],
 	addFavorite: () => {},
 	deleteFavorite: () => {},
-	toogleFav: () => {},
+	toggleFav: () => {},
 	isFavActive: false,
 	isFavoriteStatus: false,
 })
-
-let status: string = ''
 
 export const FavFilmsContextProvider = ({ children }: React.PropsWithChildren<{}>) => {
 	const [favoriteFilms, setFavoriteFilms] = useState<Film[]>([])
@@ -38,31 +36,28 @@ export const FavFilmsContextProvider = ({ children }: React.PropsWithChildren<{}
 	}
 
 	function addFavoritesHandler(selectedFilmId: Film) {
-		setFavoriteFilms(prevfavoritefilms => [selectedFilmId, ...prevfavoritefilms])
+		const isFavorite = favoriteFilms.some(favFilm => favFilm.id === selectedFilmId.id)
 
-		setIsFavoriteStatus(true)
+		if (!isFavorite) {
+			setFavoriteFilms(prevfavotitefilms => [selectedFilmId, ...prevfavotitefilms])
+		} else {
+			alert('Film is Favorites!')
+		}
 	}
 
 	function deleteFavHandler(selectedFilmId: Film) {
 		setFavoriteFilms(prevfavoritesfilm => prevfavoritesfilm.filter(favoriteFilms => favoriteFilms !== selectedFilmId))
-
-		setIsFavoriteStatus(false)
 	}
 
-	function toogleFavHandler(selectedFilmId: Film) {
+	function toggleFavHandler(selectedFilmId: Film) {
+		const isFavorite = favoriteFilms.some(favFilm => favFilm.id === selectedFilmId.id)
 
-		if (favoriteFilms.some(favFilm => favFilm.id === selectedFilmId.id)) {
-			status = 'FilmIsFav'
-		} else {
-			status = 'NotIsFav'
-		}
-
-		if (status === 'FilmIsFav') {
+		if (isFavorite) {
 			deleteFavHandler(selectedFilmId)
-		}
-
-		if (status !== 'FilmIsFav') {
+			setIsFavoriteStatus(false)
+		} else {
 			addFavoritesHandler(selectedFilmId)
+			setIsFavoriteStatus(true)
 		}
 
 		return setIsFavoriteStatus(null)
@@ -72,7 +67,7 @@ export const FavFilmsContextProvider = ({ children }: React.PropsWithChildren<{}
 		favoriteFilms,
 		addFavorite: addFavoritesHandler,
 		deleteFavorite: deleteFavHandler,
-		toogleFav: toogleFavHandler,
+		toggleFav: toggleFavHandler,
 		isFavActive,
 		isFavoriteStatus,
 	}
