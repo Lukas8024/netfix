@@ -13,6 +13,7 @@ type Film = {
 export default function MyFavorites() {
 	const { favoriteFilms, isFavActive, deleteFavorite } = useContext(FavFilmContext)
 
+
 	return (
 		<section id='myfavorites'>
 			<h2>Favorites Films</h2>

@@ -10,7 +10,7 @@ type Film = {
 
 type FilmsContextObj = {
 	favoriteFilms: Film[]
-	addFavorite: (selectedFilmId: Film) => void
+	// addFavorite: (selectedFilmId: Film) => void
 	deleteFavorite: (selectedFilmId: Film) => void
 	toggleFav: (selectedFilmId: Film) => void
 	isFavActive: boolean
@@ -19,11 +19,11 @@ type FilmsContextObj = {
 
 const FavFilmContext = createContext<FilmsContextObj>({
 	favoriteFilms: [],
-	addFavorite: () => {},
+	// addFavorite: () => {},
 	deleteFavorite: () => {},
 	toggleFav: () => {},
 	isFavActive: false,
-	isFavoriteStatus: false,
+	isFavoriteStatus: null,
 })
 
 export const FavFilmsContextProvider = ({ children }: React.PropsWithChildren<{}>) => {
@@ -35,37 +35,39 @@ export const FavFilmsContextProvider = ({ children }: React.PropsWithChildren<{}
 		isFavActive = true
 	}
 
-	function addFavoritesHandler(selectedFilmId: Film) {
-		const isFavorite = favoriteFilms.some(favFilm => favFilm.id === selectedFilmId.id)
+	// function addFavoritesHandler(selectedFilmId: Film) {
+	// 	const isFavorite = favoriteFilms.some(favFilm => favFilm.id === selectedFilmId.id)
 
-		if (!isFavorite) {
-			setFavoriteFilms(prevfavotitefilms => [selectedFilmId, ...prevfavotitefilms])
-		} else {
-			alert('Film is Favorites!')
-		}
-	}
-
+	// 	if (!isFavorite) {
+	// 		setIsFavoriteStatus(true)
+	// 	} else {
+	// 		alert('Film is Favorites!')
+	// 	}
+	// }
+	
 	function deleteFavHandler(selectedFilmId: Film) {
 		setFavoriteFilms(prevfavoritesfilm => prevfavoritesfilm.filter(favoriteFilms => favoriteFilms !== selectedFilmId))
-	}
-
-	function toggleFavHandler(selectedFilmId: Film) {
-		const isFavorite = favoriteFilms.some(favFilm => favFilm.id === selectedFilmId.id)
-
-		if (isFavorite) {
-			deleteFavHandler(selectedFilmId)
 			setIsFavoriteStatus(false)
-		} else {
-			addFavoritesHandler(selectedFilmId)
+		}
+		
+		function toggleFavHandler(selectedFilmId: Film) {
+			const isFavorite = favoriteFilms.some(favFilm => favFilm.id === selectedFilmId.id)
+			
+			if (isFavorite) {
+				deleteFavHandler(selectedFilmId)
+				setIsFavoriteStatus(false)
+			} else {
+			setFavoriteFilms(prevfavotitefilms => [selectedFilmId, ...prevfavotitefilms])
+			// addFavoritesHandler(selectedFilmId)
 			setIsFavoriteStatus(true)
 		}
 
-		return setIsFavoriteStatus(null)
+		// return setIsFavoriteStatus(null)
 	}
 
 	const FilmContext = {
 		favoriteFilms,
-		addFavorite: addFavoritesHandler,
+		// addFavorite: addFavoritesHandler,
 		deleteFavorite: deleteFavHandler,
 		toggleFav: toggleFavHandler,
 		isFavActive,

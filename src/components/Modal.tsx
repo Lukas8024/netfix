@@ -5,7 +5,9 @@ import FavFilmContext from '../store/films-context'
 export default function Modal({ children, onClose, isOpen, id }: any) {
 	const [isFavorite, setIsFavorite] = useState<boolean>()
 
-	const { addFavorite, deleteFavorite, favoriteFilms } = useContext(FavFilmContext)
+	const { favoriteFilms, isFavoriteStatus, toggleFav } = useContext(FavFilmContext)
+
+	console.log(isFavoriteStatus)
 
 	useEffect(() => {
 		const isFavorite = favoriteFilms.some(favFilm => favFilm.id === id.id)
@@ -24,7 +26,7 @@ export default function Modal({ children, onClose, isOpen, id }: any) {
 		return () => {
 			document.body.style.overflow = ''
 		}
-	}, [isOpen])
+	}, [isOpen, isFavoriteStatus])
 
 	if (!isOpen) {
 		return null
@@ -35,11 +37,14 @@ export default function Modal({ children, onClose, isOpen, id }: any) {
 			<dialog className='modal'>
 				<div className='modal-content'>
 					{children}
-					{!isFavorite ? (
+					{/* {!isFavorite ? (
 						<button onClick={() => addFavorite(id)}>Add Favorites</button>
 					) : (
 						<button onClick={() => deleteFavorite(id)}>Remove Favorites</button>
-					)}
+					)} */}
+
+					<button onClick={() => toggleFav(id)}>{!isFavorite ? 'Add Fav' : 'Remove Fav'}</button>
+
 					{/* <button onClick={() => addFavorite(id)}>Add Favorites</button> */}
 					<button onClick={onClose}>Close</button>
 				</div>
