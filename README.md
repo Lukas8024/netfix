@@ -1,6 +1,9 @@
 # React + TypeScript + Vite
 
 
+Live:
+lukas8024.github.io/netfix/
+
 
 The “Netfix” project was written to practice what I learned about React + TypeScript, with less focus on styling. 
 
@@ -15,7 +18,6 @@ In the “Films” sub-page, you will find all the films from the library and ca
 This project is being developed all the time. In the future I would like to use the API and add a database of movies on the backend.
 
 
-## Live: 📍lukas8024.github.io/netfix/
 
 
 
