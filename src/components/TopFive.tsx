@@ -5,7 +5,6 @@ import { DUMMY_FILMS } from '../dummy-video'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
 
-// const TopFive = () => {
 export default function TopFive () {
 	const [selectedFilms, setSelectedFilms] =
 		useState<{ id: number; image: string; title: string; description: string }[]>(DUMMY_FILMS)
@@ -36,14 +35,6 @@ export default function TopFive () {
 				<h2>Top five</h2>
 				<p>This week, five of your most loved and watched movies.</p>
 			</div>
-
-			{/* <ul className='topfilms'>
-						{selectedFilms.map(film => (
-							<li key={film.id}>
-								<img src={film.image} alt={film.title} />
-							</li>
-						))}
-					</ul> */}
 
 			<Carousel
 				additionalTransfrom={0}
@@ -118,5 +109,3 @@ export default function TopFive () {
 		</>
 	)
 }
-
-// export default TopFive

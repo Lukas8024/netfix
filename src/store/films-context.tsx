@@ -1,18 +1,20 @@
 import React, { createContext, useState } from 'react'
-import Film from '../components/Film'
+// import Film from '../components/Film'
 
-type Film = {
-	id: number
-	image: string
-	title: string
-	description: string
-}
+import { type Film as FilmS } from '../components/Films' 
+
+// type Film = {
+// 	id: number
+// 	image: string
+// 	title: string
+// 	description: string
+// }
 
 type FilmsContextObj = {
-	favoriteFilms: Film[]
+	favoriteFilms: FilmS[]
 	// addFavorite: (selectedFilmId: Film) => void
-	deleteFavorite: (selectedFilmId: Film) => void
-	toggleFav: (selectedFilmId: Film) => void
+	deleteFavorite: (selectedFilmId: FilmS) => void
+	toggleFav: (selectedFilmId: FilmS) => void
 	isFavActive: boolean
 	isFavoriteStatus: boolean | null
 }
@@ -27,7 +29,7 @@ const FavFilmContext = createContext<FilmsContextObj>({
 })
 
 export const FavFilmsContextProvider = ({ children }: React.PropsWithChildren<{}>) => {
-	const [favoriteFilms, setFavoriteFilms] = useState<Film[]>([])
+	const [favoriteFilms, setFavoriteFilms] = useState<FilmS[]>([])
 	const [isFavoriteStatus, setIsFavoriteStatus] = useState<boolean | null>(null)
 
 	let isFavActive = false
@@ -44,19 +46,19 @@ export const FavFilmsContextProvider = ({ children }: React.PropsWithChildren<{}
 	// 		alert('Film is Favorites!')
 	// 	}
 	// }
-	
-	function deleteFavHandler(selectedFilmId: Film) {
+
+	function deleteFavHandler(selectedFilmId: FilmS) {
 		setFavoriteFilms(prevfavoritesfilm => prevfavoritesfilm.filter(favoriteFilms => favoriteFilms !== selectedFilmId))
+		setIsFavoriteStatus(false)
+	}
+
+	function toggleFavHandler(selectedFilmId: FilmS) {
+		const isFavorite = favoriteFilms.some(favFilm => favFilm.id === selectedFilmId.id)
+
+		if (isFavorite) {
+			deleteFavHandler(selectedFilmId)
 			setIsFavoriteStatus(false)
-		}
-		
-		function toggleFavHandler(selectedFilmId: Film) {
-			const isFavorite = favoriteFilms.some(favFilm => favFilm.id === selectedFilmId.id)
-			
-			if (isFavorite) {
-				deleteFavHandler(selectedFilmId)
-				setIsFavoriteStatus(false)
-			} else {
+		} else {
 			setFavoriteFilms(prevfavotitefilms => [selectedFilmId, ...prevfavotitefilms])
 			// addFavoritesHandler(selectedFilmId)
 			setIsFavoriteStatus(true)

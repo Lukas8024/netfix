@@ -1,16 +1,29 @@
-import { useEffect, useContext, useState } from 'react'
+import { useEffect, useContext, useState, type ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 import FavFilmContext from '../store/films-context'
 
-export default function Modal({ children, onClose, isOpen, id }: any) {
-	const [isFavorite, setIsFavorite] = useState<boolean>()
+interface ModalProps {
+	children: ReactNode
+	onClose: () => void
+	isOpen: boolean
+	film: Film
+}
+interface Film {
+	id: number
+	image: string
+	title: string
+	description: string
+}
+
+export default function Modal({ children, onClose, isOpen, film }: ModalProps) {
+	const [isFavorite, setIsFavorite] = useState<boolean | null>()
 
 	const { favoriteFilms, isFavoriteStatus, toggleFav } = useContext(FavFilmContext)
 
 	console.log(isFavoriteStatus)
 
 	useEffect(() => {
-		const isFavorite = favoriteFilms.some(favFilm => favFilm.id === id.id)
+		const isFavorite = favoriteFilms.some(favFilm => favFilm.id === film.id)
 
 		if (isFavorite) {
 			setIsFavorite(true)
@@ -23,8 +36,10 @@ export default function Modal({ children, onClose, isOpen, id }: any) {
 		} else {
 			document.body.style.overflow = ''
 		}
+		
 		return () => {
 			document.body.style.overflow = ''
+			setIsFavorite(null)
 		}
 	}, [isOpen, isFavoriteStatus])
 
@@ -43,7 +58,7 @@ export default function Modal({ children, onClose, isOpen, id }: any) {
 						<button onClick={() => deleteFavorite(id)}>Remove Favorites</button>
 					)} */}
 
-					<button onClick={() => toggleFav(id)}>{!isFavorite ? 'Add Fav' : 'Remove Fav'}</button>
+					<button onClick={() => toggleFav(film)}>{!isFavorite ? 'Add Fav' : 'Remove Fav'}</button>
 
 					{/* <button onClick={() => addFavorite(id)}>Add Favorites</button> */}
 					<button onClick={onClose}>Close</button>

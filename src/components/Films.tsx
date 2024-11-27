@@ -5,12 +5,12 @@ import Film from './Film'
 import Modal from './Modal.tsx'
 import MyFavorites from './MyFavorites.tsx'
 
-// type Film = {
-// 	id: number
-// 	image: string
-// 	title: string
-// 	description: string
-// }
+export type Film = {
+	id: number
+	image: string
+	title: string
+	description: string
+}
 
 const initialSelectedFilm = {
 	id: 0,
@@ -23,7 +23,7 @@ export default function Films() {
 	const [selectedFilm, setSelectedFilm] = useState(initialSelectedFilm)
 	const [isModalOpen, setIsModalOpen] = useState(false)
 
-	const openModal = (filmId: any) => {
+	const openModal = (filmId: Film) => {
 		setSelectedFilm(filmId)
 		setIsModalOpen(true)
 	}
@@ -46,7 +46,7 @@ export default function Films() {
 				</ul>
 
 				{isModalOpen ? (
-					<Modal onClose={closeModal} isOpen={isModalOpen} id={selectedFilm}>
+					<Modal onClose={closeModal} isOpen={isModalOpen} film={selectedFilm}>
 						<Film {...selectedFilm} />
 						<p>{selectedFilm.description}</p>
 					</Modal>

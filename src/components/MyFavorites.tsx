@@ -3,12 +3,12 @@ import { useContext } from 'react'
 import Film from './Film'
 import FavFilmContext from '../store/films-context'
 
-type Film = {
-	id: number
-	image: string
-	title: string
-	description: string
-}
+// type Film = {
+// 	id: number
+// 	image: string
+// 	title: string
+// 	description: string
+// }
 
 export default function MyFavorites() {
 	const { favoriteFilms, isFavActive, deleteFavorite } = useContext(FavFilmContext)

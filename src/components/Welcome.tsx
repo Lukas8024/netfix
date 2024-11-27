@@ -4,7 +4,6 @@ export default function Welcome() {
 	return (
 		<>
 			<header id='main-header'>
-				{/* <img src={libraryFilms} alt='Hero Image' /> */}
 				<div className='hero-img'>
 					<div className='shadow-img'></div>
 				</div>

@@ -3,12 +3,14 @@ import FavFilmContext from '../store/films-context'
 
 import { DUMMY_FILMS } from '../dummy-video'
 
-type FilmProps = {
-	id: number
-	title: string
-	image: string
-	description: string
-}
+import { type Film as FilmProps} from '../components/Films'
+
+// type FilmProps = {
+// 	id: number
+// 	title: string
+// 	image: string
+// 	description: string
+// }
 
 export default function Film({ id, title, image }: FilmProps): React.ReactElement {
 	const { favoriteFilms, toggleFav } = useContext(FavFilmContext)
