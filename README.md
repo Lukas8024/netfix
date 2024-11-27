@@ -1,50 +1,35 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+Live:
+lukas8024.github.io/netfix/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+The “Netfix” project was written to practice what I learned about React + TypeScript, with less focus on styling. 
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+I use React Router in the project to maintain a static page. Instead of “createBrowserRouter”, I used “HashRouter”,among other things, to make it easier to host in “GitHub Pages”.
 
-- Configure the top-level `parserOptions` property like this:
+In the “Top five” section, five movies from the library are drawn, which are stored in the browser's “local storage” to be visible on all subpages until the page is closed.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+In the “Films” sub-page, you will find all the films from the library and can add or remove them from “My favorites.” They are displayed in the lower section of “Films,” and on the sub-page “My favorites” where we can also delete them.  
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+This project is being developed all the time. In the future I would like to use the API and add a database of movies on the backend.
+
+
+
+
+
+Projekt „Netfix” został napisany, aby przećwiczyć to, czego nauczyłem się o React + TypeScript, a mniej skupiłem się na stylowaniu. 
+
+Używam React Router w projekcie w celu utrzymania statycznej strony. Zamiast „createBrowserRouter”, użyłem między innymi „HashRouter”,aby  ułatwić hostowanie go w „GitHub Pages”.
+
+W sekcji „Top five” zostaje wylosowanych pięć filmów z biblioteki, które są przechowywane w „local storage” przeglądarki aby były widoczne na wszystkich podstronach aż do zamknięcia strony.
+
+Na podstronie „Films” znajdziemy wszystkie filmy z biblioteki oraz możemy je dodać lub usunąć z „My favorites”. Są one wyświetlane w dolnej sekcji „Films, oraz na podstronie „My favorites” gdzie możemy je również usuwać.  
+
+
+
+Projekt ten jest cały czas rozwijany. W przyszłości chciałbym użyć API i dodać bazę danych filmów na zapleczu.
 ```
