@@ -1,15 +1,14 @@
 # Welcome to Netfix!
 
-The **"Netfix"** project was written to practice what I learned about React + TypeScript, with less focus on styling.
+The **"Netfix"** project was written to practice what I have learned about React + TypeScript, with less focus on styling.
 
 
 ## Live:  [Netfix](http://lukas8024.github.io/netfix/)
 
 
-## Description
-The “Netfix” project was written to practice what I learned about React + TypeScript, with less focus on styling. 
+## Description 
 
-I use React Router in the project to maintain a static page. Instead of “createBrowserRouter”, I used “HashRouter”,among other things, to make it easier to host in “GitHub Pages”.
+I used React Router in the project to maintain a static page. Instead of “createBrowserRouter”, I used “HashRouter”,among other things, to make it easier to host in “GitHub Pages”.
 
 In the “Top five” section, five movies from the library are drawn, which are stored in the browser's “local storage” to be visible on all subpages until the page is closed.
 
