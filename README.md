@@ -1,7 +1,9 @@
-# React + TypeScript + Vite
+# Welcome to Netfix!
+
+The **"Netfix"** project was written to practice what I learned about React + TypeScript, with less focus on styling.
 
 
-Live:
+## Live:
 lukas8024.github.io/netfix/
 
 
@@ -18,18 +20,9 @@ In the “Films” sub-page, you will find all the films from the library and ca
 This project is being developed all the time. In the future I would like to use the API and add a database of movies on the backend.
 
 
-
-
-
-Projekt „Netfix” został napisany, aby przećwiczyć to, czego nauczyłem się o React + TypeScript, a mniej skupiłem się na stylowaniu. 
-
-Używam React Router w projekcie w celu utrzymania statycznej strony. Zamiast „createBrowserRouter”, użyłem między innymi „HashRouter”,aby  ułatwić hostowanie go w „GitHub Pages”.
-
-W sekcji „Top five” zostaje wylosowanych pięć filmów z biblioteki, które są przechowywane w „local storage” przeglądarki aby były widoczne na wszystkich podstronach aż do zamknięcia strony.
-
-Na podstronie „Films” znajdziemy wszystkie filmy z biblioteki oraz możemy je dodać lub usunąć z „My favorites”. Są one wyświetlane w dolnej sekcji „Films, oraz na podstronie „My favorites” gdzie możemy je również usuwać.  
-
-
-
-Projekt ten jest cały czas rozwijany. W przyszłości chciałbym użyć API i dodać bazę danych filmów na zapleczu.
-```
+## Technologies
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) 
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) 
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
