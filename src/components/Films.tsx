@@ -45,12 +45,7 @@ export default function Films() {
 					))}
 				</ul>
 
-				{isModalOpen ? (
-					<Modal onClose={closeModal} isOpen={isModalOpen} film={selectedFilm}>
-						<Film {...selectedFilm} />
-						<p>{selectedFilm.description}</p>
-					</Modal>
-				) : null}
+				{isModalOpen ? <Modal onClose={closeModal} isOpen={isModalOpen} film={selectedFilm} /> : null}
 			</section>
 
 			<MyFavorites />

@@ -9,7 +9,7 @@ function FilmsRoot() {
 			<div className='main-root'>
 				<div className='shadow-root'>
 					<MainNavigation />
-					<main>
+					<main className='wrapper'>
 						<Outlet />
 					</main>
 					<Footer />
