@@ -3,7 +3,7 @@
 The **"Netfix"** project was written to practice what I learned about React + TypeScript, with less focus on styling.
 
 
-## Live:  [Netfix](lukas8024.github.io/netfix/)
+## Live:  [Netfix](http://lukas8024.github.io/netfix/)
 
 
 ## Description
