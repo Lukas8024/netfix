@@ -5,6 +5,8 @@ import Film from './Film'
 import Modal from './Modal.tsx'
 import MyFavorites from './MyFavorites.tsx'
 
+import { AnimatePresence } from 'motion/react'
+
 export type Film = {
 	id: number
 	image: string
@@ -44,8 +46,9 @@ export default function Films() {
 						</li>
 					))}
 				</ul>
-
-				{isModalOpen ? <Modal onClose={closeModal} isOpen={isModalOpen} film={selectedFilm} /> : null}
+				<AnimatePresence>
+					{isModalOpen ? <Modal onClose={closeModal} isOpen={isModalOpen} film={selectedFilm} /> : null}
+				</AnimatePresence>
 			</section>
 
 			<MyFavorites />

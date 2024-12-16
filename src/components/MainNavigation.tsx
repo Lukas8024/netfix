@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 import logo from '../assets/logoN.svg'
 import burgerIcon from '../assets/burgerIcon.svg'
+import burgerClose from '../assets/burgerClose.svg'
 
 export default function MainNavigation() {
 	const [isOpen, setIsOpen] = useState(false)
@@ -32,7 +33,8 @@ export default function MainNavigation() {
 				<img src={logo} alt='Logo Netfix' />
 			</NavLink>
 			<button className='hamburger' onClick={toggleNavigation}>
-				<img src={burgerIcon} alt='menu button' />
+				{!isOpen ? <img src={burgerIcon} alt='menu button' /> : <img src={burgerClose} alt='menu close' />}
+				{/* <img src={burgerIcon} alt='menu button' /> */}
 			</button>
 			<ul className={`list ${isOpen ? 'active' : ''}`}>
 				<li>

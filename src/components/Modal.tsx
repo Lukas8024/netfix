@@ -1,6 +1,7 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
-// import FavFilmContext from '../store/films-context'
+
+import { motion } from 'motion/react'
 
 import Film from './Film'
 
@@ -18,30 +19,18 @@ interface Film {
 }
 
 export default function Modal({ onClose, isOpen, film }: ModalProps) {
-	// const [isFavorite, setIsFavorite] = useState<boolean | null>()
-
-	// const { favoriteFilms, isFavoriteStatus, toggleFav } = useContext(FavFilmContext)
-
-	// console.log(isFavoriteStatus)
+	const dialog = useRef<HTMLDialogElement | null>(null)
 
 	useEffect(() => {
-		// const isFavorite = favoriteFilms.some(favFilm => favFilm.id === film.id)
-
-		// if (isFavorite) {
-		// 	setIsFavorite(true)
-		// } else {
-		// 	setIsFavorite(false)
-		// }
-
-		if (isOpen) {
+		if (isOpen && dialog.current) {
+			dialog.current.showModal()
 			document.body.style.overflow = 'hidden'
 		} else {
 			document.body.style.overflow = ''
 		}
-		
+
 		return () => {
 			document.body.style.overflow = ''
-			// setIsFavorite(null)
 		}
 	}, [isOpen])
 
@@ -51,16 +40,23 @@ export default function Modal({ onClose, isOpen, film }: ModalProps) {
 
 	return createPortal(
 		<div className='overlay' onClick={onClose}>
-			<dialog className='modal'>
-				<div className='modal-content'>
-
+			<motion.dialog
+				ref={dialog}
+				variants={{
+					hidden: { opacity: 0, y: 30 },
+					visible: { opacity: 1, y: 0 },
+				}}
+				initial='hidden'
+				animate='visible'
+				exit='hidden'
+				className='modal'
+			>
+				<div className='modal-content' onClick={(e) => e.stopPropagation()}>
 					<Film {...film} />
 					<p>{film.description}</p>
-
-					{/* <button onClick={() => toggleFav(film)}>{!isFavorite ? 'Add Fav' : 'Remove Fav'}</button> */}
 					<button onClick={onClose}>Close</button>
 				</div>
-			</dialog>
+			</motion.dialog>
 		</div>,
 		document.getElementById('modal')!
 	)

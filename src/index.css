@@ -85,21 +85,33 @@ li {
 	font-size: 2.5rem;
 }
 
-.header-content-link {
-	/* display: inline-block; */
-	padding: 0.5rem 1rem;
-	margin: 2rem;
+.header-content-button {
+	margin-top: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	background-color: rgb(228, 9, 9);
-	color: #fff;
 	border-radius: 4px;
-	text-decoration: none;
-	font-size: 1.4rem;
-	font-weight: bold;
-	text-transform: uppercase;
+	border: 0;
 }
 
-button {
-	cursor: pointer;
+.header-content-button :hover {
+	background-color: rgb(185, 9, 9);
+	border-radius: 4px;
+}
+
+.link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem 3rem;
+	width: 100%;
+	height: 100%;
+	font-size: 1.6rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #fff;
 }
 
 /* Films Root */
@@ -123,7 +135,7 @@ button {
 	display: flex;
 	flex-direction: column;
 	min-height: 100%;
-  }
+}
 
 .shadow-root {
 	position: absolute;
@@ -393,25 +405,29 @@ button {
 
 .overlay {
 	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100vh;
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0.75);
 	z-index: 100;
 }
 
 .modal {
-	position: fixed;
-	top: 50%;
+	margin: auto;
+	/* position: fixed; */
+	/* top: 50%;
 	left: 50%;
-	max-height: 80vh;
-	overflow-y: auto;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%); */
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	z-index: 3000;
+	max-height: 80vh;
+	overflow-y: auto;
+	z-index: 100;
 }
 
 .modal-content {
