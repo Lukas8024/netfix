@@ -11,7 +11,7 @@ export default function Welcome() {
 				<div className='header-content'>
 					<h1>Netfix</h1>
 					<h3>Library of films and series worth watching.</h3>
-					<motion.button whileHover={{scale: 1.1}} transition={{ type: 'spring', stiffness: 500}} className='header-content-button'>
+					<motion.button whileHover={{scale: 1.1}} whileTap={{ scale: 0.85}} transition={{ type: 'spring', stiffness: 500}} className='header-content-button'>
 						<Link to='/films' className='link'>
 							Get Started
 						</Link>

@@ -5,6 +5,8 @@ import logo from '../assets/logoN.svg'
 import burgerIcon from '../assets/burgerIcon.svg'
 import burgerClose from '../assets/burgerClose.svg'
 
+import { motion } from 'motion/react'
+
 export default function MainNavigation() {
 	const [isOpen, setIsOpen] = useState(false)
 
@@ -34,9 +36,12 @@ export default function MainNavigation() {
 			</NavLink>
 			<button className='hamburger' onClick={toggleNavigation}>
 				{!isOpen ? <img src={burgerIcon} alt='menu button' /> : <img src={burgerClose} alt='menu close' />}
-				{/* <img src={burgerIcon} alt='menu button' /> */}
 			</button>
-			<ul className={`list ${isOpen ? 'active' : ''}`}>
+			<motion.ul
+				className={`list ${isOpen ? 'active' : ''}`}
+				animate={isOpen ? { scale: 1.2, opacity: 1 } : { scale: 1, opacity: 0 }}
+				transition={{ duration: 0.5 }}
+			>
 				<li>
 					<NavLink to='/' onClick={handleCloseModal}>
 						Start
@@ -57,7 +62,7 @@ export default function MainNavigation() {
 						About
 					</NavLink>
 				</li>
-			</ul>
+			</motion.ul>
 		</nav>
 	)
 }
