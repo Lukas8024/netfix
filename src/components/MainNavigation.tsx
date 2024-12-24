@@ -39,7 +39,7 @@ export default function MainNavigation() {
 			</button>
 			<motion.ul
 				className={`list ${isOpen ? 'active' : ''}`}
-				animate={isOpen ? { scale: 1.2, opacity: 1 } : { scale: 1, opacity: 0 }}
+				animate={isOpen ? { scale: 1.2 } : { scale: 1 }}
 				transition={{ duration: 0.5 }}
 			>
 				<li>

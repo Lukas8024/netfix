@@ -4,6 +4,12 @@ import saberWars from './assets/saber_wars.jpg'
 import fastFurious from './assets/syrena105.jpg'
 import drunkPirates from './assets/drunk_pirates.jpg'
 import weirdThinks from './assets/weird_things.jpg'
+import jamunji from './assets/jamunji.jpg'
+import queenLion from './assets/queenlion.jpg'
+import theCockachmen from './assets/the_cockroachman.jpg'
+import theLordNecklaces from './assets/lord_of_necklaces.jpg'
+import silentSheep from './assets/the_silence_of_the_sheep.jpg'
+import yellowMile from './assets/the_yellow_mile.jpg'
 
 type MyObject = {
 	id: number
@@ -54,5 +60,47 @@ export const DUMMY_FILMS: MyObject[] = [
 		title: 'Weird Things',
 		description:
 			'The boy`s disappearance is the beginning of strange and dangerous events plaguing the provincial town. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem nesciunt inventore, omnis optio vero, perferendis ipsa quos iste sed dolore qui commodi earum! Suscipit a beatae laudantium sit ex. Architecto dicta tenetur similique autem reiciendis! Odit temporibus molestias earum autem.',
+	},
+	{
+		id: 7,
+		image: jamunji,
+		title: 'Jamunji',
+		description:
+			'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem nesciunt inventore, omnis optio vero, perferendis ipsa quos iste sed dolore qui commodi earum! Suscipit a beatae laudantium sit ex. Architecto dicta tenetur similique autem reiciendis! Odit temporibus molestias earum autem.',
+	},
+	{
+		id: 8,
+		image: theLordNecklaces,
+		title: 'The Lord of Necklaces',
+		description:
+			'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem nesciunt inventore, omnis optio vero, perferendis ipsa quos iste sed dolore qui commodi earum! Suscipit a beatae laudantium sit ex. Architecto dicta tenetur similique autem reiciendis! Odit temporibus molestias earum autem.',
+	},
+	{
+		id: 9,
+		image: queenLion,
+		title: 'The Queen Lion',
+		description:
+			'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem nesciunt inventore, omnis optio vero, perferendis ipsa quos iste sed dolore qui commodi earum! Suscipit a beatae laudantium sit ex. Architecto dicta tenetur similique autem reiciendis! Odit temporibus molestias earum autem.',
+	},
+	{
+		id: 10,
+		image: theCockachmen,
+		title: 'The Cockachmen',
+		description:
+			'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem nesciunt inventore, omnis optio vero, perferendis ipsa quos iste sed dolore qui commodi earum! Suscipit a beatae laudantium sit ex. Architecto dicta tenetur similique autem reiciendis! Odit temporibus molestias earum autem.',
+	},
+	{
+		id: 11,
+		image: silentSheep,
+		title: 'The Silence of the sheep',
+		description:
+			'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem nesciunt inventore, omnis optio vero, perferendis ipsa quos iste sed dolore qui commodi earum! Suscipit a beatae laudantium sit ex. Architecto dicta tenetur similique autem reiciendis! Odit temporibus molestias earum autem.',
+	},
+	{
+		id: 12,
+		image: yellowMile,
+		title: 'The Yellow Mile',
+		description:
+			'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem nesciunt inventore, omnis optio vero, perferendis ipsa quos iste sed dolore qui commodi earum! Suscipit a beatae laudantium sit ex. Architecto dicta tenetur similique autem reiciendis! Odit temporibus molestias earum autem.',
 	},
 ]
