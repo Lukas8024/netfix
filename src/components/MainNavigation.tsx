@@ -6,6 +6,7 @@ import burgerIcon from '../assets/burgerIcon.svg'
 import burgerClose from '../assets/burgerClose.svg'
 
 import { motion } from 'motion/react'
+import { spring } from 'motion'
 
 export default function MainNavigation() {
 	const [isOpen, setIsOpen] = useState(false)
@@ -25,7 +26,7 @@ export default function MainNavigation() {
 		setIsOpen(!isOpen)
 	}
 
-	function handleCloseModal() {
+	function handleCloseNavigation() {
 		setIsOpen(false)
 	}
 
@@ -34,31 +35,36 @@ export default function MainNavigation() {
 			<NavLink to='/'>
 				<img src={logo} alt='Logo Netfix' />
 			</NavLink>
-			<button className='hamburger' onClick={toggleNavigation}>
+			<motion.button
+				whileTap={{ rotate: 180 }}
+				transition={{ type: spring }}
+				className='hamburger'
+				onClick={toggleNavigation}
+			>
 				{!isOpen ? <img src={burgerIcon} alt='menu button' /> : <img src={burgerClose} alt='menu close' />}
-			</button>
+			</motion.button>
 			<motion.ul
-				className={`list ${isOpen ? 'active' : ''}`}
+				className={`list ${isOpen ? 'open' : ''}`}
 				animate={isOpen ? { scale: 1.2 } : { scale: 1 }}
 				transition={{ duration: 0.5 }}
 			>
 				<li>
-					<NavLink to='/' onClick={handleCloseModal}>
+					<NavLink to='/' onClick={handleCloseNavigation}>
 						Start
 					</NavLink>
 				</li>
 				<li>
-					<NavLink to='/films' onClick={handleCloseModal}>
+					<NavLink to='/films' end onClick={handleCloseNavigation}>
 						Films
 					</NavLink>
 				</li>
 				<li>
-					<NavLink to='/films/favorites' onClick={handleCloseModal}>
+					<NavLink to='/films/favorites' onClick={handleCloseNavigation}>
 						My Favorites
 					</NavLink>
 				</li>
 				<li>
-					<NavLink to='/films/about' onClick={handleCloseModal}>
+					<NavLink to='/films/about' onClick={handleCloseNavigation}>
 						About
 					</NavLink>
 				</li>

@@ -16,7 +16,7 @@ export default function MyFavorites() {
 	return (
 		<section id='myfavorites'>
 			<h2>Favorites Films</h2>
-			{isFavActive ? <p>My selected film summaries.</p> : <p>Add favorites Films.</p>}
+			{isFavActive ? <p>My selected film summaries.</p> : <p>Add favorites films.</p>}
 
 			<ul className=' myfavorites'>
 				{favoriteFilms.map(favoriteFilms => (

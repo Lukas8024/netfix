@@ -85,14 +85,14 @@ export const DUMMY_FILMS: MyObject[] = [
 	{
 		id: 10,
 		image: theCockachmen,
-		title: 'The Cockachmen',
+		title: 'The Cockroach-Man',
 		description:
 			'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem nesciunt inventore, omnis optio vero, perferendis ipsa quos iste sed dolore qui commodi earum! Suscipit a beatae laudantium sit ex. Architecto dicta tenetur similique autem reiciendis! Odit temporibus molestias earum autem.',
 	},
 	{
 		id: 11,
 		image: silentSheep,
-		title: 'The Silence of the sheep',
+		title: 'The Silence of the Sheep',
 		description:
 			'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem nesciunt inventore, omnis optio vero, perferendis ipsa quos iste sed dolore qui commodi earum! Suscipit a beatae laudantium sit ex. Architecto dicta tenetur similique autem reiciendis! Odit temporibus molestias earum autem.',
 	},

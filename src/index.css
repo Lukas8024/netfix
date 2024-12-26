@@ -255,10 +255,9 @@ li {
 	display: none;
 	align-items: center;
 	gap: 1rem;
-	/* z-index: 5; */
 }
 
-.list.active {
+.list.open {
 	position: absolute;
 	display: flex;
 	justify-content: space-between;
@@ -274,9 +273,10 @@ li {
 	/* overflow-y: auto; */
 }
 
-.list.active a {
+.list.open a {
 	text-transform: uppercase;
 	font-size: 3rem;
+
 }
 
 .list a {
@@ -285,8 +285,15 @@ li {
 	font-size: 1.8rem;
 	color: #6f5aad;
 	text-transform: uppercase;
-	z-index: 10005;
+	z-index: 5;
 }
+
+.list a:hover,
+.list a:active,
+.list a.active {
+  color: #4f407c;
+}
+
 
 /* Component Top5 five */
 
@@ -420,14 +427,9 @@ li {
 
 .modal {
 	margin: auto;
-	/* position: fixed; */
-	/* top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%); */
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* max-height: 80vh; */
 	overflow-y: auto;
 	z-index: 100;
 
@@ -473,7 +475,6 @@ li {
 }
 
 .myfavorites {
-	/* background-color: #6f5aad; */
 	margin: 2rem;
 }
 
@@ -517,7 +518,6 @@ li {
 /* Footer */
 
 .footer {
-	/* position: absolute; */
 	display: flex;
 	justify-content: center;
 	margin-top: 3rem;
