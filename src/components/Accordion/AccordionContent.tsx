@@ -1,11 +1,19 @@
+import { ReactNode } from 'react'
 import { useAccordionContext } from './Accordion'
 import { useAccordionItemContext } from './AccordionItem'
 
-export default function AccordionContenet({ children, className }: any) {
+type AccordionContetntProps = {
+	children: ReactNode;
+	className?: string;
+}
+
+export default function AccordionContenet({ children, className }: AccordionContetntProps) {
 	const { openItemId } = useAccordionContext()
 	const id = useAccordionItemContext()
 
-	const isOpen = openItemId === id
+	const itemId = id.id
+	
+	const isOpen = openItemId === itemId
 
 	return <div className={isOpen ? `${className ?? ''} open` : `${className ?? ''} close`}>{children}</div>
 }

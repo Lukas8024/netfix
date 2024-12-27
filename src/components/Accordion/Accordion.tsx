@@ -1,17 +1,17 @@
-import { createContext, useContext, useState } from 'react'
+import { createContext, PropsWithChildren, ReactNode, useContext, useState } from 'react'
 
 import AccordionItem from './AccordionItem'
 import AccordionTitle from './AccordionTitle'
 import AccordionContenet from './AccordionContent'
 
 interface AccordionContextType {
-	toggleItem: any
-	openItemId: any
+	toggleItem: (id: string) => void
+	openItemId: string | null
 }
 
 const AccordionContext = createContext<AccordionContextType | undefined>(undefined)
 
-export function useAccordionContext() {
+export function useAccordionContext(): AccordionContextType {
 	const ctx = useContext(AccordionContext)
 
 	if (!ctx) {
@@ -21,10 +21,14 @@ export function useAccordionContext() {
 	return ctx
 }
 
-export default function Accordion({ children, className }: any) {
-	const [openItemId, setOpenItemId] = useState()
+interface AccordionProps {
+	className?: string
+	children: ReactNode
+}
+export default function Accordion({ children, className }: PropsWithChildren<AccordionProps>): JSX.Element {
+	const [openItemId, setOpenItemId] = useState<string | null>(null)
 
-	function toggleItem(id: any) {
+	function toggleItem(id: string | null): void {
 		setOpenItemId(prevId => (prevId === id ? null : id))
 	}
 
