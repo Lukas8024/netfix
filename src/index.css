@@ -492,6 +492,14 @@ li {
 	border-radius: 6px;
 }
 
+#myfavorites .content{
+ font-size: 1.6rem;
+}
+
+.myfavorites button:hover{
+	cursor: pointer;
+}
+
 /* About */
 #about {
 	display: flex;

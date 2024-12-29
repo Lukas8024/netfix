@@ -36,16 +36,7 @@ export default function Film({ id, title, image }: FilmProps): React.ReactElemen
 
 	return (
 		<article className='film'>
-			<div
-				// variants={{
-				// 	hidden: { opacity: 0, scale: 0.7 },
-				// 	visible: { opacity: 1, scale: 1 },
-				// }}
-				// exit={{ opacity: 1, scale: 1 }}
-				// // exit='visible'
-				// transition={{ type: 'spring' }}
-				className='film-image'
-			>
+			<div className='film-image'>
 				<img className='film-image' src={image} alt={title} />
 
 				<motion.svg

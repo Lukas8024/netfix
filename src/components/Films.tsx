@@ -5,7 +5,7 @@ import Film from './Film'
 import Modal from './Modal.tsx'
 import MyFavorites from './MyFavorites.tsx'
 
-import { AnimatePresence } from 'motion/react'
+import { AnimatePresence, motion } from 'motion/react'
 
 export type Film = {
 	id: number
@@ -41,9 +41,9 @@ export default function Films() {
 				<p>A library of movies and series in your home and beyond.</p>
 				<ul className='films'>
 					{DUMMY_FILMS.map(film => (
-						<li key={film.id} onClick={() => openModal(film)}>
+						<motion.li whileHover={{ scale: 1.1 }} key={film.id} onClick={() => openModal(film)}>
 							<Film {...film} />
-						</li>
+						</motion.li>
 					))}
 				</ul>
 				<AnimatePresence>
